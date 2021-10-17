@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <% include head %>
+  <body>
+    <!-- NAVIGATION BAR here -->
+    <% include navbar %>
+
+    <!-- BODY here -->
+    <img src="<%= imageBaseUrl + chosenMovie.poster_path %>">
+    <h1 class="header"><%= chosenMovie.title %></h1>
+    <h3 class="overview">
+      <%= chosenMovie.overview %>
+    </h3>
+  
+    <p class="details">
+      <table>
+        <tr>
+          <th>Genre</th>
+          <td colspan="<%= chosenMovie.genres.length %>">
+            <% chosenMovie.genres.forEach(movie => { %>
+              <%= movie.name + ',' %>
+            <% }) %>
+          </td>
+        </tr>
+        <tr>
+          <th>Home Page</th>
+          <td><% if(!chosenMovie.homepage) { %>
+            <%= 'none' %>
+          <% } else { %>
+              <a href="<%= chosenMovie.homepage %>" target="_blank"><%= chosenMovie.homepage %></a>
+          <% } %></td>
+        </tr>
+        <tr>
+          <th>IMDB link</th>
+          <td><a href="https://www.imdb.com/title/<%= chosenMovie.imdb_id %>" target="_blank">Click here</a></td>
+        </tr>
+        <% chosenMovie.production_companies.forEach(company => { %>
+        <tr>
+            <th>Production Company</th>
+            <td><%= company.name %></td> 
+        </tr>
+          <% }) %>
+        <tr>
+          <th>Status</th>
+          <td><%= chosenMovie.status %></td>
+        </tr>
+        <tr>
+          <th>Release Date</th>
+          <td><%= chosenMovie.release_date %></td>
+        </tr>
+        <tr>
+          <th>Runtime</th>
+          <td><%= chosenMovie.runtime %> minutes</td>
+        </tr>
+        <tr>
+          <th>Average Vote</th>
+          <td><%= chosenMovie.vote_average %></td>
+        </tr>
+        <tr>
+          <th>Voted</th>
+          <td><%= chosenMovie.vote_count %></td>
+        </tr>
+      </table>
+    </p> 
+  </body>
+</html>

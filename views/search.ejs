@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <% include head %>
+  <body>
+    <!-- NAVIGATION BAR here -->
+    <% include navbar %>
+    <!-- BODY here -->
+    <h1 class="header">Search: <span><%= searchTerm %></span></h1>
+    <% if(person) { %>
+        <h3><%= searchTerm %> has starred in the following movies.</h3>
+    <% } %>
+    <section class="movies">
+        <% parsedData.forEach(movie => { %>
+        <div class="movie-box">
+            <a href="/movies/<%= movie.id %>"><img src="<%= imageBaseUrl + movie.poster_path %>"></a>
+            
+            <h2 class="title">
+              <a href="/movies/<%= movie.id %>"><%= movie.title %></a>
+            </h2>
+        </div>
+        <% }) %>
+    </section>
+    
+  
+
+    
+
+    <p class="overview">
+
+    </p>
+  </body>
+</html>

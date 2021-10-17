@@ -1,0 +1,33 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: rgb(245, 245, 245);
+}
+
+nav > ul > a {
+    font-size: 30px;
+    text-decoration: none;
+    font-family: 'Fira Mono', monospace;
+}
+
+.header {
+    margin-left: 17px;
+    font-family: 'Fira Mono', monospace;
+    
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-box {
+    width: 300px;
+    padding: 20px 15px;
+}
+
+.movie-box > h2 > a {
+    color: rgb(68, 149, 255);
+}
