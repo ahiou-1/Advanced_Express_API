@@ -1,6 +1,6 @@
 # Advanced_Express_API
 
-### Express + EJS 로 서버 사이드 렌더링을 구현했다.
+### Express Generator + EJS 로 서버 사이드 렌더링을 구현했다.
 https://www.themoviedb.org/ 의 API 를 이용해서 
 1. 현재 상영중인 영화 목록
 2. 개별 영화의 상세 정보
